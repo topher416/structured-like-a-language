@@ -18,6 +18,8 @@ nav:
     url: /brief
   - title: Progress
     url: /progress
+  - title: FAQ
+    url: /faq
   - title: "Phase 1: Theory"
     children:
       - title: "1.1 Lacanian Specification"
