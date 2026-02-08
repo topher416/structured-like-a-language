@@ -1,8 +1,23 @@
 <nav class="site-nav" aria-label="Main navigation">
-  <div class="container">
-    <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
-      <span class="nav-toggle-label">Menu</span>
-    </button>
+  <div class="container nav-shell">
+    <div class="nav-controls">
+      <button class="theme-toggle" type="button" aria-label="Toggle color theme" aria-pressed="false" title="Toggle color theme">
+        <span class="sr-only">Toggle color theme</span>
+        <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 17a5 5 0 1 0 0-10a5 5 0 0 0 0 10Zm0-15v3m0 14v3M4.93 4.93l2.12 2.12m9.9 9.9l2.12 2.12M2 12h3m14 0h3M4.93 19.07l2.12-2.12m9.9-9.9l2.12-2.12" />
+        </svg>
+        <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 1 0 9.8 9.8Z" />
+        </svg>
+      </button>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-drawer">
+        <span class="sr-only">Toggle navigation menu</span>
+        <span class="nav-toggle-bars" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+  <div class="nav-overlay" hidden></div>
+  <aside class="nav-drawer" id="nav-drawer">
     <ul class="nav-menu" id="nav-menu">
       {% for item in site.nav %}
         {% if item.children %}
@@ -29,5 +44,5 @@
         {% endif %}
       {% endfor %}
     </ul>
-  </div>
+  </aside>
 </nav>
