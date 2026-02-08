@@ -1,0 +1,8 @@
+title: Structured Like a Language
+description: A research project testing whether transformer language models instantiate key Lacanian structures of the unconscious through formal theory and empirical analysis.
+theme: null
+markdown: kramdown
+kramdown:
+  input: GFM
+plugins:
+  - jekyll-seo-tag
