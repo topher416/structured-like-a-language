@@ -8,7 +8,7 @@ Index of all primary and secondary sources, their processing status, and notes.
 
 | # | Source | File in `raw/` | Type | Pages/Sections | Status | Notes |
 |---|--------|----------------|------|----------------|--------|-------|
-| 1 | Lacan, "Instance of the Letter" (*Écrits*, Fink trans.) | | A | pp. 493–528 | Not started | Side-by-side FR/EN scanned PDF |
+| 1 | Lacan, "Instance of the Letter" (*Écrits*, Fink trans.) | `lacan-ecrits-fink.pdf` | A | pp. 493–528 | Verified | Local OCR via Tesseract → `processed/lacan-instance-of-the-letter-fink_cleaned.md`. Research reading complete (Feb 8, 2026): 15 structural properties extracted for Phase 1.1. Key passages cited with page numbers. Cross-references flagged for Sources #2, #3, #4, #5, #6, #7, #8. |
 | 2 | Lacan, "Function and Field of Speech" (*Écrits*, Fink trans.) | | A | pp. 197–268 | Not started | Same volume as #1 |
 | 3 | Lacan, *Seminar III: The Psychoses* | | TBD | Key chapters TBD | Not started | |
 | 4 | Lacan, *Seminar XI: Four Fundamental Concepts* | | TBD | Key chapters TBD | Not started | |

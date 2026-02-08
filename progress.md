@@ -5,13 +5,13 @@ title: Progress Tracker
 
 # Research Progress
 
-*Last updated: February 2026*
+*Last updated: February 8, 2026*
 
 ## Timeline Overview
 
 | Phase | Deliverable | Weeks | Status |
 |-------|-------------|-------|--------|
-| 1.1 | Lacanian Specification | 1–8 | Not started |
+| 1.1 | Lacanian Specification | 1–8 | In progress |
 | 1.2 | Computational Specification | 3–8 | Not started |
 | 1.3 | Formal Mapping | 9–10 | Not started |
 | 2.1 | Literature Review | 3–10 | Not started |
@@ -27,16 +27,24 @@ title: Progress Tracker
 ## Phase 1 — Theoretical Reconstruction (Weeks 1–10)
 
 ### 1.1 Lacanian Specification
-{: .phase-pending}
+{: .phase-active}
 
-**Status:** Not started
+**Status:** In progress
 **Target:** Weeks 1–8
 **Deliverable:** [Specification document](/phases/1-1-lacanian-specification)
 
 - [ ] Read primary sources (Instance of the Letter, Rome Discourse, Seminar III, XI, XX, Jakobson, Saussure, Freud Ch. 6)
+  - [x] "The Instance of the Letter in the Unconscious" (Lacan, 1957) — 15 properties extracted with source citations and preliminary operationalizations
+  - [ ] "The Function and Field of Speech and Language" (Lacan, 1953)
+  - [ ] *Seminar III: The Psychoses* (Lacan, 1955–56)
+  - [ ] *Seminar XI: Four Fundamental Concepts* (Lacan, 1964)
+  - [ ] *Seminar XX: Encore* (Lacan, 1972–73)
+  - [ ] Jakobson, "Two Aspects of Language" (1956)
+  - [ ] Saussure, *Course in General Linguistics* (1916)
+  - [ ] Freud, *Interpretation of Dreams* Ch. 6 (1900)
 - [ ] Read secondary sources (Fink, Milner, Borch-Jacobsen, Laplanche)
-- [ ] Extract 10–15 structural properties as testable propositions
-- [ ] Define each property with source text and operationalization criteria
+- [x] Extract 10–15 structural properties as testable propositions — 15 properties identified from first source
+- [ ] Define each property with source text and operationalization criteria — definitions and source texts complete for all 15; operationalizations marked preliminary pending computational specification (Phase 1.2)
 
 ### 1.2 Computational Specification
 {: .phase-pending}
