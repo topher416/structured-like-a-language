@@ -17,6 +17,8 @@
       </div>
     </header>
 
+    {% include nav.html %}
+
     <main class="container prose" id="content">
       {{ content }}
     </main>
@@ -26,5 +28,20 @@
         <p>Published with GitHub Pages and Jekyll.</p>
       </div>
     </footer>
+
+    <script>
+      // Mobile nav toggle
+      document.addEventListener('DOMContentLoaded', function () {
+        var toggle = document.querySelector('.nav-toggle');
+        var menu = document.querySelector('.nav-menu');
+        if (toggle && menu) {
+          toggle.addEventListener('click', function () {
+            var expanded = toggle.getAttribute('aria-expanded') === 'true';
+            toggle.setAttribute('aria-expanded', !expanded);
+            menu.classList.toggle('is-open');
+          });
+        }
+      });
+    </script>
   </body>
 </html>

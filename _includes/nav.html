@@ -1,0 +1,33 @@
+<nav class="site-nav" aria-label="Main navigation">
+  <div class="container">
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
+      <span class="nav-toggle-label">Menu</span>
+    </button>
+    <ul class="nav-menu" id="nav-menu">
+      {% for item in site.nav %}
+        {% if item.children %}
+          <li class="nav-item has-children">
+            <span class="nav-parent">{{ item.title }}</span>
+            <ul class="nav-children">
+              {% for child in item.children %}
+                <li>
+                  <a href="{{ child.url | relative_url }}"
+                     {% if page.url == child.url %}class="active" aria-current="page"{% endif %}>
+                    {{ child.title }}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </li>
+        {% else %}
+          <li class="nav-item">
+            <a href="{{ item.url | relative_url }}"
+               {% if page.url == item.url %}class="active" aria-current="page"{% endif %}>
+              {{ item.title }}
+            </a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+</nav>

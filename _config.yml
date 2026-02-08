@@ -6,3 +6,37 @@ kramdown:
   input: GFM
 plugins:
   - jekyll-seo-tag
+
+nav:
+  - title: Home
+    url: /
+  - title: Research Brief
+    url: /brief
+  - title: Progress
+    url: /progress
+  - title: "Phase 1: Theory"
+    children:
+      - title: "1.1 Lacanian Specification"
+        url: /phases/1-1-lacanian-specification
+      - title: "1.2 Computational Specification"
+        url: /phases/1-2-computational-specification
+      - title: "1.3 Formal Mapping"
+        url: /phases/1-3-formal-mapping
+  - title: "Phase 2: Literature"
+    children:
+      - title: "2.1 Literature Review"
+        url: /phases/2-1-literature-review
+      - title: "2.2 Objections"
+        url: /phases/2-2-objections
+  - title: "Phase 3: Empirical"
+    children:
+      - title: "3.1 Predictions"
+        url: /phases/3-1-predictions
+      - title: "3.2 Computational Illumination"
+        url: /phases/3-2-computational-illumination
+      - title: "3.3 The Question of Lack"
+        url: /phases/3-3-lack
+  - title: "Phase 4: Manuscript"
+    url: /phases/4-manuscript
+  - title: "Phase 5: Review"
+    url: /phases/5-collaboration

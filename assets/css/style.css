@@ -67,6 +67,113 @@ body {
   margin-top: 0.7rem;
 }
 
+/* ── Navigation ── */
+
+.site-nav {
+  border-bottom: 1px solid var(--line);
+  background: color-mix(in srgb, var(--bg) 80%, white 20%);
+}
+
+.site-nav .container {
+  position: relative;
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 0.4rem 0.8rem;
+  font-family: inherit;
+  font-size: 0.85rem;
+  color: var(--muted);
+  cursor: pointer;
+  margin: 0.5rem 0;
+}
+
+.nav-menu {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-item > a,
+.nav-parent {
+  display: block;
+  padding: 0.6rem 0.75rem;
+  font-size: 0.82rem;
+  color: var(--muted);
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 0.15s;
+}
+
+.nav-item > a:hover,
+.nav-parent:hover {
+  color: var(--accent);
+}
+
+.nav-item > a.active {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Dropdown */
+.has-children {
+  position: relative;
+}
+
+.nav-children {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(80, 60, 35, 0.1);
+  list-style: none;
+  margin: 0;
+  padding: 0.3rem 0;
+  min-width: 220px;
+  z-index: 100;
+}
+
+.has-children:hover .nav-children,
+.has-children:focus-within .nav-children {
+  display: block;
+}
+
+.nav-children li a {
+  display: block;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.15s, background 0.15s;
+}
+
+.nav-children li a:hover {
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 6%, transparent);
+}
+
+.nav-children li a.active {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* ── Prose ── */
+
 .prose {
   background: color-mix(in srgb, var(--bg-card) 92%, white 8%);
   margin-top: 1.6rem;
@@ -104,12 +211,129 @@ body {
   color: var(--muted);
 }
 
+.prose a {
+  color: var(--accent);
+  text-decoration-color: color-mix(in srgb, var(--accent) 40%, transparent);
+  text-underline-offset: 0.15em;
+  transition: text-decoration-color 0.15s;
+}
+
+.prose a:hover {
+  text-decoration-color: var(--accent);
+}
+
+/* Tables */
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.2rem 0;
+  font-size: 0.9rem;
+}
+
+.prose th,
+.prose td {
+  padding: 0.5rem 0.7rem;
+  border: 1px solid var(--line);
+  text-align: left;
+}
+
+.prose th {
+  background: color-mix(in srgb, var(--bg) 60%, var(--bg-card) 40%);
+  font-weight: 600;
+  font-size: 0.82rem;
+}
+
+/* Task lists */
+.prose ul {
+  padding-left: 1.5rem;
+}
+
+.prose li {
+  margin-bottom: 0.3rem;
+}
+
+.prose input[type="checkbox"] {
+  margin-right: 0.4rem;
+  accent-color: var(--accent);
+}
+
+/* Blockquotes */
+.prose blockquote {
+  margin: 1.2rem 0;
+  padding: 0.8rem 1.2rem;
+  border-left: 3px solid var(--accent);
+  background: color-mix(in srgb, var(--accent) 4%, transparent);
+  color: var(--muted);
+  font-style: italic;
+}
+
+.prose blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+/* Horizontal rules as section dividers */
+.prose hr {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 2rem 0;
+}
+
+/* ── Phase Status Indicators ── */
+
+.phase-pending,
+.phase-active,
+.phase-complete {
+  position: relative;
+  padding-left: 1.2rem;
+}
+
+.phase-pending::before,
+.phase-active::before,
+.phase-complete::before {
+  position: absolute;
+  left: 0;
+  font-size: 0.75rem;
+  line-height: 1.2;
+  top: 2.15rem;
+}
+
+.phase-pending::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 2px solid var(--line);
+  top: 2.35rem;
+}
+
+.phase-active::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--accent);
+  top: 2.35rem;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 20%, transparent);
+}
+
+.phase-complete::before {
+  content: "\2713";
+  color: #4a7c59;
+  font-weight: 700;
+  top: 2.15rem;
+}
+
+/* ── Footer ── */
+
 .site-footer {
   border-top: 1px solid var(--line);
   color: var(--muted);
   font-size: 0.95rem;
   padding: 1rem 0 2.3rem;
 }
+
+/* ── Responsive ── */
 
 @media (max-width: 700px) {
   .site-header {
@@ -118,5 +342,38 @@ body {
 
   .prose {
     border-radius: 10px;
+  }
+
+  /* Mobile nav */
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    padding-bottom: 0.5rem;
+  }
+
+  .nav-menu.is-open {
+    display: flex;
+  }
+
+  .nav-children {
+    position: static;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    padding-left: 1rem;
+    background: transparent;
+  }
+
+  .has-children:hover .nav-children,
+  .has-children:focus-within .nav-children {
+    display: block;
+  }
+
+  .nav-children {
+    display: block;
   }
 }
