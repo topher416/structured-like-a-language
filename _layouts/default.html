@@ -10,6 +10,18 @@
       href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,500;7..72,600;7..72,700&family=Manrope:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <script>
+      (function () {
+        var key = 'slal-theme';
+        try {
+          var stored = localStorage.getItem(key);
+          var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+          document.documentElement.setAttribute('data-theme', stored || (prefersDark ? 'dark' : 'light'));
+        } catch (error) {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      })();
+    </script>
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}" />
     {% seo %}
   </head>
@@ -20,6 +32,7 @@
         <p class="kicker">Research Brief</p>
         <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
         <p class="tagline">{{ site.description }}</p>
+        <button class="theme-toggle" type="button" aria-label="Toggle color theme" aria-pressed="false">Dark mode</button>
       </div>
     </header>
 
@@ -38,8 +51,40 @@
     <script>
       // Mobile nav toggle
       document.addEventListener('DOMContentLoaded', function () {
+        var root = document.documentElement;
+        var themeKey = 'slal-theme';
+        var themeToggle = document.querySelector('.theme-toggle');
         var toggle = document.querySelector('.nav-toggle');
         var menu = document.querySelector('.nav-menu');
+
+        function getSystemTheme() {
+          return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+
+        function applyTheme(theme) {
+          root.setAttribute('data-theme', theme);
+          if (themeToggle) {
+            var isDark = theme === 'dark';
+            themeToggle.textContent = isDark ? 'Light mode' : 'Dark mode';
+            themeToggle.setAttribute('aria-pressed', String(isDark));
+          }
+        }
+
+        var currentTheme = root.getAttribute('data-theme') || getSystemTheme();
+        applyTheme(currentTheme);
+
+        if (themeToggle) {
+          themeToggle.addEventListener('click', function () {
+            var nextTheme = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            applyTheme(nextTheme);
+            try {
+              localStorage.setItem(themeKey, nextTheme);
+            } catch (error) {
+              // Ignore storage failures (private browsing, policy restrictions)
+            }
+          });
+        }
+
         if (toggle && menu) {
           toggle.addEventListener('click', function () {
             var expanded = toggle.getAttribute('aria-expanded') === 'true';
