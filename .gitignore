@@ -1,0 +1,21 @@
+# Jekyll build output
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Raw source files (copyrighted material — do not commit)
+sources/raw/*
+!sources/raw/.gitkeep
+
+# Processed transcriptions (derived from copyrighted material)
+sources/processed/*
+!sources/processed/.gitkeep
+
+# Processing intermediates
+sources/scripts/__pycache__/
+sources/scripts/*.pyc
+sources/scripts/temp/
+
+# OS files
+.DS_Store
