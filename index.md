@@ -7,7 +7,7 @@ title: Home
 
 A multi-phase research project testing whether transformer LLMs instantiate the formal operations Lacan attributed to the unconscious — condensation, displacement, overdetermination, retroactive meaning-making — and proposing empirical methods to test that claim.
 
-[Read the full research brief](/brief)  ·  [Track progress](/progress)
+[Read the full research brief](/brief)  ·  [Track progress](/progress)  ·  [Lexicon](/lexicon)
 
 ---
 

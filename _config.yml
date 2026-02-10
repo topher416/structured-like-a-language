@@ -21,6 +21,8 @@ nav:
     url: /progress
   - title: FAQ
     url: /faq
+  - title: Lexicon
+    url: /lexicon
   - title: "Phase 1: Theory"
     children:
       - title: "1.1 Lacanian Specification"
