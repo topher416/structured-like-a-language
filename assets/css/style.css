@@ -483,6 +483,17 @@ body {
   accent-color: var(--accent);
 }
 
+/* MathJax / LaTeX — display math: block spacing + 3× size */
+mjx-container[jax="SVG"] {
+  font-size: 3em !important;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block !important;
+  margin: 1.8rem 0 !important;
+  overflow-x: auto;
+}
+
 .prose blockquote {
   margin: 1.35rem 0;
   padding: 0.88rem 1.08rem;
